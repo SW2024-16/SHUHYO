@@ -1,5 +1,5 @@
-<p class="total-balance"><strong>Total Balance: </strong><%= number_to_currency(@total_balance, unit: '¥', precision: 0) %></p>
-<%= link_to 'Add Expense', new_expense_path, class: 'btn btn-primary' %>
+<p class="total-balance"><strong>合計の費用: </strong><%= number_to_currency(@total_balance, unit: '¥', precision: 0) %></p>
+<%= link_to '収支を追加', new_expense_path, class: 'btn btn-primary' %>
 
 <%= month_calendar(year: @year, month: @month) do |date| %>
   <div class="day">
@@ -16,15 +16,15 @@
             <span><%= number_to_currency(expense.amount, unit: '¥', precision: 0) %></span>
             
             <!-- Add the delete link for each individual expense -->
-            <%= link_to 'Delete', expense_path(expense), method: :delete, data: { confirm: 'Are you sure you want to delete this expense?' }, class: 'btn btn-danger btn-sm' %>
+            <%= link_to '削除', expense_path(expense), method: :delete, data: { confirm: 'Are you sure you want to delete this expense?' }, class: 'btn btn-danger btn-sm' %>
           </div>
         <% end %>
       <% else %>
-        <p>No expenses for this day.</p>
+        <p>この日には何もなかったです</p>
       <% end %>
 
       <!-- Add an "Edit Expenses for this day" link -->
-      <%= link_to 'Edit Expenses for this day', edit_day_expenses_path(date: date), class: 'btn btn-secondary btn-sm' %>
+      <%= link_to '編集', edit_day_expenses_path(date: date), class: 'btn btn-secondary btn-sm' %>
     </div>
   </div>
 <% end %>

@@ -1,10 +1,10 @@
-<h1>Expense Details</h1>
+<h1>収支</h1>
 
 <p><strong>Date:</strong> <%= @expense.date %></p>
 <p><strong>Description:</strong> <%= @expense.description %></p>
-<p><strong>Amount:</strong> <%= number_to_currency(@expense.amount / 100.0, unit: "¥") %></p>
+<p><strong>Amount:</strong> <%= number_to_currency(@expense.amount, unit: '¥', precision: 0) %></p>
 <p><strong>Transaction Type:</strong> <%= @expense.transaction_type || "Not Specified" %></p>
 
-<%= link_to 'Edit', edit_expense_path(@expense), class: "btn btn-primary" %>
-<%= link_to 'Back to list', expenses_path, class: "btn btn-secondary" %>
-<%= link_to 'Delete', expense_path(@expense), method: :delete, data: { confirm: 'Are you sure you want to delete this expense?' }, class: "btn btn-danger" %>
+<%= link_to '編集', edit_expense_path(@expense), class: "btn btn-primary" %>
+<%= link_to 'キャンセル', transactions_path, class: 'btn btn-secondary' %>
+<%= link_to '削除', expense_path, method: :delete, class: "btn btn-danger" %>

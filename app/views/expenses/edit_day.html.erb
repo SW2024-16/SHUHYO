@@ -1,6 +1,6 @@
 <!-- app/views/expenses/edit_day.html.erb -->
-<h1>Edit Expenses for 
-  <%= @selected_date.present? ? @selected_date.strftime("%B %d, %Y") : "No date selected" %>
+<h1> 
+  <%= @selected_date.present? ? @selected_date.strftime("%B %d, %Y") : "No date selected" %>　の費用
 </h1>
 
 <%= form_with(url: update_day_expenses_path(date: @selected_date), method: :patch, local: true) do %>
@@ -27,7 +27,7 @@
         </div>
 
         <div class="form-group">
-          <%= link_to 'Delete', expense_path(expense), method: :delete, class: 'btn btn-danger' %>
+          <%= link_to '削除', expense_path(expense), method: :delete, class: 'btn btn-danger' %>
         </div>
 
         <hr>
@@ -35,13 +35,13 @@
     <% end %>
 
     <div class="form-group">
-      <%= submit_tag 'Update All Expenses', class: 'btn btn-primary' %>
+      <%= submit_tag '更新', class: 'btn btn-primary' %>
     </div>
   <% else %>
-    <p>No expenses found for this day.</p>
+    <p>この日には何もなかったです</p>
   <% end %>
 
   <div class="form-group">
-    <%= link_to 'Cancel', transactions_path, class: 'btn btn-secondary' %>
+    <%= link_to 'キャンセル', transactions_path, class: 'btn btn-secondary' %>
   </div>
 <% end %>

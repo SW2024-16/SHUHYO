@@ -1,5 +1,5 @@
-<h1>Expenses</h1>
-<%= link_to 'Add Expense', new_expense_path, class: 'btn btn-primary' %>
+<h1>収支</h1>
+<%= link_to '収支追加', new_expense_path, class: 'btn btn-primary' %>
 
 <ul>
   <% if @expenses.present? %>
@@ -7,7 +7,7 @@
       <li>
         <%= expense.name %>: <%= number_to_currency(expense.amount) %> - <%= expense.date %>
         <!-- 削除リンク -->
-        <%= link_to 'Delete', expense_path(expense), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+        <%= link_to '削除', expense_path(expense), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
       </li>
     <% end %>
   <% else %>

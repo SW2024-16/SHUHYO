@@ -12,22 +12,27 @@
   border: 1px solid #ccc;
   padding: 10px;
   height: 100px;
-  overflow: auto;
+  overflow: hidden;
 }
-
+body {
+    overflow: hidden;
+}
 /* リストのスタイルをカスタマイズ */
 ul {
   list-style: none;
   margin: 0; /* 余白をリセット */
   padding: 0; /* 内側の余白をリセット */
+  overflow: hidden;
 }
 table {
   table-layout: fixed;
   width: 100%; /* This makes the table span the full width of its container */
+  overflow: hidden;
 }
 
 th, td {
   text-align: left;
   padding: 8px; /* Adjust the padding to your liking */
+  overflow: hidden;
 }
 

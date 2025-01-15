@@ -5,3 +5,28 @@ ja:
     add_transaction: "新しい収支を追加"
     logout: "ログアウト"
     copyright: "© 2024 Shuhyo. 全著作権所有。"
+  activerecord:
+    attributes:
+      torihiki:
+        name: 名前
+        amount: 金額
+        date: 日付
+        description: 説明
+        transaction_type: 取引の種類
+    errors:
+      models:
+        torihiki:
+          attributes:
+            name:
+              blank: "名前を入力してください"
+            amount:
+              blank: "金額を入力してください"
+              greater_than_or_equal_to: "金額は0以上である必要があります"
+            date:
+              blank: "日付を入力してください"
+            transaction_type:
+              inclusion: "取引の種類は「収入」または「支出」である必要があります"
+  errors:
+    messages:
+      blank: "を入力してください"
+      greater_than_or_equal_to: "は%{count}以上である必要があります"

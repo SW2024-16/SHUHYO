@@ -64,9 +64,7 @@ class ExpensesController < ApplicationController
   # Delete an individual expense
   def destroy
     if @expense.destroy
-      redirect_to transactions_path, notice: 'Expense deleted successfully.'
-    else
-      redirect_to transactions_path, alert: 'Failed to delete the expense.'
+      redirect_to transactions_path
     end
   end
 
@@ -97,7 +95,5 @@ class ExpensesController < ApplicationController
   def expense_params
     params.require(:expense).permit(:name, :amount, :date, :description)
   end
-  setup do
-    @user = users(:user_one)
-  end
+
 end

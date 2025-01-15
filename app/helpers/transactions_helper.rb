@@ -25,6 +25,6 @@ module TransactionsHelper
 
   # Helper method to display the date in a readable format
   def format_transaction_date(date)
-    date.strftime("%B %d, %Y") # Example: "December 01, 2024"
+    date.strftime("%m %d, %Y") # Example: "December 01, 2024"
   end
 end
