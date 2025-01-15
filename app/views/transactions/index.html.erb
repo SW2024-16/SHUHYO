@@ -1,4 +1,4 @@
-<p class="total-balance"><strong>合計の費用: </strong><%= number_to_currency(@total_balance, unit: '¥', precision: 0) %></p>
+<p class="total-balance"><strong>合計の収支: </strong><%= number_to_currency(@total_balance, unit: '¥', precision: 0) %></p>
 <%= link_to '収支を追加', new_expense_path, class: 'btn btn-primary' %>
 
 <%= month_calendar(year: @year, month: @month) do |date| %>

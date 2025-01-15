@@ -16,6 +16,7 @@
 }
 body {
     overflow: hidden;
+    background-color: beige;
 }
 /* リストのスタイルをカスタマイズ */
 ul {
