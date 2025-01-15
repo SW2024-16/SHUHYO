@@ -97,4 +97,7 @@ class ExpensesController < ApplicationController
   def expense_params
     params.require(:expense).permit(:name, :amount, :date, :description)
   end
+  setup do
+    @user = users(:user_one)
+  end
 end
