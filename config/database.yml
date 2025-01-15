@@ -34,6 +34,6 @@ production:
   pool: 5
   database: shuhyo
   username: shuhyo_user
-  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
+  password: <%= ENV['p1wfopfowGOBwilaAEjIeSFCTN78DGNx'] %>
+  url: <%= ENV['postgresql://shuhyo_user:p1wfopfowGOBwilaAEjIeSFCTN78DGNx@dpg-cu3h6o3tq21c73ami7q0-a/shuhyo'] %>
   # database: path/to/persistent/storage/production.sqlite3
