@@ -29,4 +29,11 @@ test:
 # ensure the database is located in a persisted volume.
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: shuhyo
+  username: shuhyo_user
+  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
   # database: path/to/persistent/storage/production.sqlite3

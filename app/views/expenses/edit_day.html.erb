@@ -1,8 +1,9 @@
+<!-- app/views/expenses/edit_day.html.erb -->
 <h1>Edit Expenses for 
   <%= @selected_date.present? ? @selected_date.strftime("%B %d, %Y") : "No date selected" %>
 </h1>
 
-<%= form_with(url: update_day_expenses_path, method: :patch, local: true) do %>
+<%= form_with(url: update_day_expenses_path(date: @selected_date), method: :patch, local: true) do %>
   <% if @expenses.any? %>
     <% @expenses.each do |expense| %>
       <div class="expense-form">
@@ -25,7 +26,10 @@
           <%= text_area_tag "expenses[][description]", expense.description, class: 'form-control' %>
         </div>
 
-        <%= link_to 'Delete', expense_path(expense), method: :delete, class: 'btn btn-danger' %>
+        <div class="form-group">
+          <%= link_to 'Delete', expense_path(expense), method: :delete, class: 'btn btn-danger' %>
+        </div>
+
         <hr>
       </div>
     <% end %>

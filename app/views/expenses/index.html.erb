@@ -1,11 +1,16 @@
-<!-- app/views/expenses/index.html.erb -->
 <h1>Expenses</h1>
 <%= link_to 'Add Expense', new_expense_path, class: 'btn btn-primary' %>
 
 <ul>
-  <% @expenses.each do |expense| %>
-    <li>
-      <%= expense.name %>: <%= number_to_currency(expense.amount) %> - <%= expense.date %>
-    </li>
+  <% if @expenses.present? %>
+    <% @expenses.each do |expense| %>
+      <li>
+        <%= expense.name %>: <%= number_to_currency(expense.amount) %> - <%= expense.date %>
+        <!-- 削除リンク -->
+        <%= link_to 'Delete', expense_path(expense), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+      </li>
+    <% end %>
+  <% else %>
+    <li>No expenses found.</li>
   <% end %>
 </ul>
